@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 
 import { Item } from "./item";
+import * as settings from "settings";
 
 @Injectable({
     providedIn: "root"
@@ -36,6 +37,7 @@ export class ItemService {
     }
 
     getItem(id: number): Item {
+        console.log("======== configuration is: == ", settings.configuration);
         return this.items.filter((item) => item.id === id)[0];
     }
 }
